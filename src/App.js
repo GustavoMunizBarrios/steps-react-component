@@ -12,16 +12,16 @@ export default function App() {
 
   function handlePrevious() {
     if (step > 1) {
-      setStep((s) => s - 1);
+      setStep((s) => s - 1); //updating state based on current state
     }
   }
   function handleNext() {
     if (step < 3) {
-      setStep((s) => s + 1);
+      setStep((s) => s + 1); //updating state based on current state
     }
   }
   function handleCross() {
-    setIsOpen((is) => !is);
+    setIsOpen((is) => !is); //updating state based on current state
   }
 
   return (
