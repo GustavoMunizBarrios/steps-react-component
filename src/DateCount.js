@@ -3,6 +3,8 @@ import { useState } from "react";
 export default function DateCount() {
   const [step, setStep] = useState(1);
   const [count, setCount] = useState(1);
+  const date = new Date();
+  date.setDate(date.getDate() + count);
 
   function handleMinusStep() {
     setStep((s) => s - 1);
@@ -56,6 +58,16 @@ export default function DateCount() {
           +
         </button>
       </div>
+      {/********** Date ************/}
+      {count > 0 ? (
+        <p style={{ color: "white" }}>
+          {`${count} days from today is ${date.toDateString()}`}
+        </p>
+      ) : (
+        <p style={{ color: "white" }}>
+          {`${count} days ago was ${date.toDateString()}`}
+        </p>
+      )}
     </>
   );
 }
