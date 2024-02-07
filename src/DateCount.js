@@ -28,7 +28,7 @@ export default function DateCount() {
           min="0"
           max="10"
           value={step}
-          onChange={(e) => setStep(e.target.value)}
+          onChange={(e) => setStep(Number(e.target.value))}
         />
         {/*          <button
           onClick={handleMinusStep}
@@ -55,9 +55,11 @@ export default function DateCount() {
         >
           -
         </button>
-        <p>
-          Count: <span>{count}</span>
-        </p>
+        <input
+          type="text"
+          value={count}
+          onChange={(e) => setCount(Number(e.target.value))}
+        />
         <button
           onClick={handleSumCount}
           style={{ width: "40px", margin: "10px" }}
