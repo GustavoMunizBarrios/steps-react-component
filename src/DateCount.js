@@ -6,17 +6,15 @@ export default function DateCount() {
   const date = new Date();
   date.setDate(date.getDate() + count);
 
-  function handleMinusStep() {
-    setStep((s) => s - 1);
-  }
-  function handleSumStep() {
-    setStep((s) => s + 1);
-  }
   function handleMinusCount() {
     setCount((c) => c - step);
   }
   function handleSumCount() {
     setCount((c) => c + step);
+  }
+  function handleReset() {
+    setCount(1);
+    setStep(1);
   }
 
   return (
@@ -77,6 +75,10 @@ export default function DateCount() {
           {`${count} days ago was ${date.toDateString()}`}
         </p>
       )}
+      {/********** RESET Button************/}
+      {step !== 1 || count !== 1 ? (
+        <button onClick={handleReset}>RESET</button>
+      ) : null}
     </>
   );
 }
