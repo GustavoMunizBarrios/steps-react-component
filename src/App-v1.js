@@ -43,27 +43,21 @@ export default function App() {
           </p>
 
           <div className="buttons">
-            <Button bgColor="#7950f2" textColor="#fff" onClick={handlePrevious}>
-              <span>⬅</span>Previous
-            </Button>
-
-            <Button bgColor="#7950f2" textColor="#fff" onClick={handleNext}>
-              Next <span>➡</span>
-            </Button>
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+              onClick={handlePrevious}
+            >
+              Previous
+            </button>
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+              onClick={handleNext}
+            >
+              Next
+            </button>
           </div>
         </div>
       )}
     </>
-  );
-}
-function Button({ bgColor, textColor, onClick, children }) {
-  // "children" is a predefine React keyword, this get has a prop everything between the tags of Button
-  return (
-    <button
-      style={{ backgroundColor: bgColor, color: textColor }}
-      onClick={onClick}
-    >
-      {children}
-    </button>
   );
 }
