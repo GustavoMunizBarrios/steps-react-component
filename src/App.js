@@ -38,9 +38,7 @@ export default function App() {
             <div className={step >= 3 ? "active" : ""}>3</div>
           </div>
 
-          <p className="message">
-            Step {step}: {messages[step - 1]}
-          </p>
+          <StepMessage step={step}>{messages[step - 1]}</StepMessage>
 
           <div className="buttons">
             <Button bgColor="#7950f2" textColor="#fff" onClick={handlePrevious}>
@@ -56,6 +54,15 @@ export default function App() {
     </>
   );
 }
+
+function StepMessage({ step, children }) {
+  return (
+    <div className="message">
+      <h3> Step {step}</h3> {children}
+    </div>
+  );
+}
+
 function Button({ bgColor, textColor, onClick, children }) {
   // "children" is a predefine React keyword, this get has a prop everything between the tags of Button
   return (
